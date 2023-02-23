@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  min-width: 375px;
+  min-width: 330px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -440,6 +440,12 @@ template {
   }
 }
 
+.mem-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .mem-card__picture-container {
   padding: 10px;
   background-color: white;
@@ -463,6 +469,7 @@ template {
 }
 
 .mem-card__body {
+  flex: 1 1 auto;
   background-color: white;
   padding: 20px;
   border-radius: 0 0 6px 6px;
@@ -473,9 +480,13 @@ template {
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 10px;
+  word-break: break-word;
 }
 
 .mem-card__badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
   margin-bottom: 10px;
 }
 
@@ -489,8 +500,9 @@ template {
   border-radius: 16px;
 }
 
-.mem-card__badge-text + .mem-card__badge-text {
-  margin-left: 5px;
+.mem-card__footer {
+  background-color: white;
+  padding: 20px;
 }
 
 .mem-card__button-group {
@@ -535,4 +547,25 @@ template {
 .mem-card__button_red {
   background-color: #dc2626;
   color: white;
+}
+
+.footer {
+  background-color: #1f2937;
+  padding: 30px 0;
+}
+
+.footer__copyright {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: white;
+  text-align: center;
+}
+
+.footer__incognito {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2d3847;
+  text-align: right;
 }

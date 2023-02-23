@@ -32,21 +32,21 @@
             <div class="memes__row">
               <div class="memes__column" v-for="mem in memes" :key="mem.id">
                 <div class="mem-card">
-                  <div class="mem-card__picture-container">
-                    <picture class="mem-card__picture">
-                      <img
-                        class="mem-card__image"
-                        :name="mem.imagePath"
-                        :src="`./img/${mem.imagePath}`"
-                        :alt="mem.imagePath"
-                      />
-                    </picture>
-                  </div>
                   <div class="mem-card__body">
+                    <div class="mem-card__picture-container">
+                      <picture class="mem-card__picture">
+                        <img
+                          class="mem-card__image"
+                          :name="mem.name"
+                          :src="`./img/${mem.imagePath}`"
+                          :alt="mem.name"
+                        />
+                      </picture>
+                    </div>
                     <div
                       class="mem-card__title"
-                      :id="mem.imagePath"
-                      :name="mem.title"
+                      :id="`${mem.title + mem.id}`"
+                      :name="mem.name"
                     >
                       {{ mem.title }}
                     </div>
@@ -55,10 +55,12 @@
                         >{{ tag }}</span
                       >
                     </div>
+                  </div>
+                  <div class="mem-card__footer">
                     <div class="mem-card__button-group">
                       <button
                         class="button mem-card__button mem-card__button_yellow"
-                        :data-button="mem.title"
+                        :data-button="`${'button-'+ mem.title }`"
                         type="button"
                       >
                         Click me
@@ -79,7 +81,10 @@
       </main>
 
       <footer class="footer">
-        <div class="container"></div>
+        <div class="container">
+          <div class="footer__copyright">All memes reserved (c)</div>
+          <span class="footer__incognito">Powered by Cikada</span>
+        </div>
       </footer>
     </div>
 

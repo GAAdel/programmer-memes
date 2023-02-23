@@ -2,73 +2,52 @@ const App = {
   data() {
     return {
       title: "Programmer memes",
-      subTitle: "Welcome to the Club Buddy",
+      subTitle: "Make programmer memes great again!",
       memes: [
         {
           id: 1,
           title: "Developing",
+          name: "joke-drake",
           tags: ["Frontend", "Backend"],
           imagePath: "pic1.jpg",
         },
         {
           id: 2,
           title: "JavaScript Programmer",
+          name: "nazim",
           tags: ["Javascript", "Ruby on Rails"],
           imagePath: "pic2.jpg",
         },
         {
           id: 3,
           title: "Developing",
+          name: "simpson",
           tags: ["Frontend", "Backend"],
           imagePath: "pic3.jpg",
         },
         {
           id: 4,
           title: "Php developer",
+          name: "google",
           tags: ["Php"],
           imagePath: "pic4.jpg",
         },
         {
           id: 5,
           title: "Programmer",
+          name: "cat",
           tags: ["coding"],
           imagePath: "pic5.jpg",
         },
         {
           id: 6,
           title: "UNIX",
+          name: "pingvin",
           tags: ["linux"],
           imagePath: "pic6.jpg",
         },
       ],
     };
-  },
-  methods: {
-    addNewNote() {
-      if (this.inputValue !== "") {
-        this.notes.push(this.inputValue);
-        this.inputValue = "";
-      }
-    },
-    toUpperCase(item) {
-      return item.toUpperCase();
-    },
-    removeNote(idx) {
-      this.notes.splice(idx, 1);
-    },
-  },
-  computed: {
-    doubleCountComputed() {
-      console.log("doubleCountComputed");
-      return this.notes.length * 2;
-    },
-  },
-  watch: {
-    inputValue(value) {
-      if (value.length > 10) {
-        this.inputValue = "";
-      }
-    },
   },
 };
 
