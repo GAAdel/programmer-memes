@@ -51,7 +51,10 @@
                       {{ mem.title }}
                     </div>
                     <div class="mem-card__badge">
-                      <span class="mem-card__badge-text" v-for="tag in mem.tags"
+                      <span
+                        class="mem-card__badge-text"
+                        v-for="tag in mem.tags"
+                        :key="tag"
                         >{{ tag }}</span
                       >
                     </div>
