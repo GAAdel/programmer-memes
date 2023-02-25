@@ -399,7 +399,7 @@ template {
   text-decoration: none;
   width: 50px;
   height: 50px;
-  background-image: url(../img/cikada.jpg);
+  background-image: url(../img//logo/cikada.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -412,11 +412,67 @@ template {
   line-height: 1.2;
   margin-left: 10px;
 }
+@media (max-width: 1024px) {
+  .header__logo-name {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
 
-.memes__title {
+.panel {
+  padding: 30px 0;
+}
+
+.panel__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel__title {
   text-align: center;
   padding: 60px 0;
   margin: 0;
+}
+
+.panel__btn {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  vertical-align: middle;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.panel__btn {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+  background-color: #1f2937;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.memes {
+  padding: 30px 0;
 }
 
 .memes__row {
@@ -449,6 +505,21 @@ template {
 .mem-card__picture-container {
   padding: 10px;
   background-color: white;
+}
+
+.top-secret {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mem-card__picture {
@@ -510,6 +581,11 @@ template {
   justify-content: space-between;
   gap: 10px;
 }
+@media (max-width: 598px) {
+  .mem-card__button-group {
+    flex-wrap: wrap;
+  }
+}
 
 .mem-card__button {
   display: inline-block;
@@ -537,6 +613,11 @@ template {
 .mem-card__button {
   padding: 10px 20px;
   border-radius: 16px;
+}
+@media (max-width: 598px) {
+  .mem-card__button {
+    width: 100%;
+  }
 }
 
 .mem-card__button_yellow {
