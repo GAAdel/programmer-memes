@@ -25,15 +25,34 @@
       </header>
 
       <main class="main">
+        <section class="panel">
+          <div class="container panel__container">
+            <h1 class="panel__title">{{ subTitle }}</h1>
+
+            <button
+              class="button panel__btn"
+              type="button"
+              @click="generateMemes"
+            >
+              Generate memes
+            </button>
+          </div>
+        </section>
+
         <section class="memes">
           <div class="container">
-            <h1 class="memes__title">{{ subTitle }}</h1>
-
             <div class="memes__row">
-              <div class="memes__column" v-for="mem in memes" :key="mem.id">
+              <div
+                class="memes__column"
+                v-for="mem in currentUserMemes"
+                :key="mem.id"
+              >
                 <div class="mem-card">
                   <div class="mem-card__body">
                     <div class="mem-card__picture-container">
+                      <span class="top-secret"
+                        >{{ mem.name }} {{ mem.name }}</span
+                      >
                       <picture class="mem-card__picture">
                         <img
                           class="mem-card__image"
@@ -45,7 +64,7 @@
                     </div>
                     <div
                       class="mem-card__title"
-                      :id="`${mem.title + mem.id}`"
+                      :id="mem.title"
                       :name="mem.name"
                     >
                       {{ mem.title }}
@@ -55,6 +74,7 @@
                         class="mem-card__badge-text"
                         v-for="tag in mem.tags"
                         :key="tag"
+                        :data-tag="tag"
                         >{{ tag }}</span
                       >
                     </div>
